@@ -46,7 +46,7 @@ If the passed string doesn't pass the validation, an [`InvalidArgumentException`
 
 This function is called when an `Int` object is casted as a string, for example when it's concatenated with another string. Instead of the object itself, the returned value is used.
 
-Returns the object's [`get()`](#) method's return value.
+Returns the object's [`get()`](#get) method's return value.
 
 ####get()
 
@@ -73,7 +73,7 @@ If the current object's value is negative, `true` is returned, otherwise `false`
 `bool eq( Int|string $compare )`
 
 Checks whether the current value equals the passed one.  
-This is equal to [`$int->cmp($compare)==0`](#).
+This is equal to [`$int->cmp($compare)==0`](#cmp).
 
 +   `$compare`: The object to compare the current one against. If not already an `Int` object, it's turned into one.
 
@@ -84,7 +84,7 @@ If the current object's value is equal to the passed one, `true` is returned, ot
 `bool gt( Int|string $compare )`
 
 Checks whether the current value is greater than the passed one.  
-This is equal to [`$int->cmp($compare)>0`](#).
+This is equal to [`$int->cmp($compare)>0`](#cmp).
 
 +   `$compare`: The object to compare the current one against. If not already an `Int` object, it's turned into one.
 
@@ -105,7 +105,7 @@ If the current object's value is greater than or equal to the passed one, `true`
 `bool lt( Int|string $compare )`
 
 Checks whether the current value is lower than the passed one.  
-This is equal to [`$int->cmp($compare)<0`](#).
+This is equal to [`$int->cmp($compare)<0`](#cmp).
 
 +   `$compare`: The object to compare the current one against. If not already an `Int` object, it's turned into one.
 
@@ -157,7 +157,7 @@ Executes a exponentiation operation on the current value using the passed one as
 
 `void sq()`
 
-Short for [`$int->pow("2")`](#).  
+Short for [`$int->pow("2")`](#pow).  
 Raises the current value to the power of 2.
 
 ####div()
@@ -176,7 +176,7 @@ Divides the current value by the passed one.
 Executes a modulus operation on the current value using the passed one as divisor.
 
 +   `$divisor`: The number by which to divide the current value before getting the remainder. If not already an `Int` object, it's turned into one.  
-    See [`div()`](#) for more information.
+    See [`div()`](#div) for more information.
 
 ####calc()
 
@@ -185,16 +185,16 @@ Executes a modulus operation on the current value using the passed one as diviso
 Calls the method that corresponds to the specified arithmetic operator.  
 The following operators are supported.
 
-+   `+` ([`Int::CALC_ADD`](#)): Addition 
-+   `-` ([`Int::CALC_SUB`](#)): Subtraction 
-+   `*` ([`Int::CALC_MULT`](#)): Multiplication 
-+   `**` ([`Int::CALC_POW`](#)): Exponentiation 
-+   `/` ([`Int::CALC_DIV`](#)): Division 
-+   `%` ([`Int::CALC_MOD`](#)): Modulus 
++   `+` ([`Int::CALC_ADD`](#calc_add)): Addition 
++   `-` ([`Int::CALC_SUB`](#calc_sub)): Subtraction 
++   `*` ([`Int::CALC_MULT`](#calc_mult)): Multiplication 
++   `**` ([`Int::CALC_POW`](#calc_pow)): Exponentiation 
++   `/` ([`Int::CALC_DIV`](#calc_div)): Division 
++   `%` ([`Int::CALC_MOD`](#calc_mod)): Modulus 
 
 For any other operator an [`Exception`](http://php.net/manual/en/class.exception.php) is thrown.
 
-+   `$operator`: The operator specifying which method to call. Use one of the operators shown above or use one of the `Int::CALC_*` constants.
++   `$operator`: The operator specifying which method to call. Use one of the operators shown above or use one of the [`Int::CALC_*` constants](#constants).
 +   `$number`: The number to calculate with. The value is passed to the corresponding function which in turn converts is into an `Int` object if it isn't already one.
 
 ####abs()
