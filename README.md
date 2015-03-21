@@ -303,7 +303,7 @@ The following versions of PHP have been tested.
     </tbody>
 </table>
 
-Moreover, it executes *real* calculations with numbers up to 89.
+Moreover, it executes *real* calculations with numbers up to 89 being 8-bit integers.
 
 
 
