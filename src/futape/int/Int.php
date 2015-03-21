@@ -1,4 +1,6 @@
 <?php
+/*! php-int 1.0.0 | Copyright (c) 2015 Lucas Krause | New BSD License | http://php-int.futape.de */
+
 namespace futape\int;
 
 use InvalidArgumentException, Exception;
